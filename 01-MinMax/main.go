@@ -13,10 +13,16 @@ func main() {
 	fmt.Println("Slice : ", si)
 
 	//Print FindMaxLoop results
-	fmt.Println(FindMaxLoop(si))
+	fmt.Println("Find Max Loop", FindMaxLoop(si))
+
+	//Print FindMinLoop
+	fmt.Println("Find Min Loop", FindMinLoop(si))
 
 	//Print FindMax results
-	fmt.Println(FindMax(si))
+	fmt.Println("Find Max", FindMax(si))
+
+	//Print FindMin results
+	fmt.Println("Find Min :", FindMin(si))
 }
 
 //Easy way to find max value
@@ -52,4 +58,36 @@ func FindMaxLoop(si []int) int {
 	}
 	//return currentMax value
 	return currentMax
+}
+
+//Find Min Value
+func FindMinLoop(si []int) int {
+	length := len(si)
+
+	//set the first value as min
+	minValue := si[0]
+
+	//if its the first element, return it
+	if length == 1 {
+		return minValue
+	}
+
+	//Loop through to find min value
+	for i := 0; i < length; i++ {
+		if minValue > si[i] {
+			minValue = si[i]
+		}
+	}
+
+	//return min value
+	return minValue
+}
+
+//Easy way
+//FindMin function
+func FindMin(si []int) int {
+	//sort the slice
+	sort.Ints(si)
+
+	return si[0]
 }
