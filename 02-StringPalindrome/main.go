@@ -17,11 +17,11 @@ func main() {
 
 //IsPalindrome - function to test a string is a Palindrome
 func IsPalindrome(input string) bool {
-	j := len(input) //sset the variable j to length of the string
+	j := len(input) - 1 //sset the variable j to length of the string
 
 	//loop through input mid-length and check characters at begging and end to see if they are the same
 	for i := 0; i < j/2; i++ {
-		if (input[i]) != input[j-1] {
+		if (input[i]) != input[j-i] {
 			return false
 		}
 	}
